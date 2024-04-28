@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            background-color: #f2f2f2; /* Background color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333333; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-bottom: 50px; /* Adjust bottom padding */
+        }
+        h1 {
+            margin-top: 100px; /* Adjust top margin */
+            font-size: 28px; /* Heading font size */
+            text-align: center;
+        }
+        h2 {
+            margin-top: 20px; /* Adjust top margin */
+            font-size: 24px; /* Sub-heading font size */
+            text-align: center; /* Center the heading */
+        }
+        p {
+            margin-top: 20px; /* Adjust top margin */
+            font-size: 16px; /* Paragraph font size */
+            text-align: justify; /* Justify paragraph text */
+        }
+        img {
+            margin-top: 20px; /* Adjust top margin */
+            max-width: 100%;
+            height: auto;
+        }
+        .disease-info {
+            background-color: #ffffff; /* Disease info background color */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center; /* Center the text */
+        }
+        .solution {
+            margin-top: 20px;
+            text-align: center; /* Center the text */
+        }
+        .important-note {
+            color: darkred; /* Text color */
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <p>Uploaded Image:</p>
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300">
+        <p>Predicted Disease: {{ prediction }}</p>
+        <p>Confidence: {{ confidence }}</p>
+        <div class="disease-info">
+            <h2>Disease Information</h2>
+            {% if prediction == 'FMD' %}
+                <p>FMD (Foot-and-mouth disease) is a highly contagious viral disease that affects cloven-hoofed animals, including cattle. It can lead to fever, blisters in the mouth and on the feet, lameness, and decreased milk production.</p>
+            {% elif prediction == 'IBK' %}
+                <p>IBK (Infectious Bovine Keratoconjunctivitis), also known as pinkeye, is a common infectious disease affecting cattle. It causes inflammation of the cornea and conjunctiva, leading to redness, tearing, and cloudiness of the eye.</p>
+            {% elif prediction == 'LSD' %}
+                <p>LSD (Lumpy skin disease) is a viral disease that affects cattle, characterized by fever, nodules on the skin, and skin lesions. It can lead to significant economic losses due to reduced milk production and weight loss.</p>
+            {% elif prediction == 'NOR' %}
+                <p>NOR (Normal) - No disease detected. The image appears to be of a healthy cow.</p>
+            {% else %}
+                <p>Unknown disease. Please consult a veterinarian for further evaluation.</p>
+            {% endif %}
+        </div>
+        <div class="solution">
+            <h2>Solution</h2>
+            {% if prediction == 'FMD' %}
+                <p>Isolate infected animals, maintain good hygiene practices, and administer appropriate vaccinations as recommended by a veterinarian.</p>
+            {% elif prediction == 'IBK' %}
+                <p>Apply antibiotic eye ointments or drops, provide shade to reduce UV exposure, and control flies to prevent further spread of the infection.</p>
+            {% elif prediction == 'LSD' %}
+                <p>Quarantine infected animals, provide supportive care, and implement vector control measures to reduce the spread of the disease.</p>
+            {% elif prediction == 'NOR' %}
+                <p>No specific treatment needed. Continue with regular health monitoring and management practices.</p>
+            {% else %}
+                <p>Since the disease is unknown, it's important to consult a veterinarian for proper diagnosis and treatment.</p>
+            {% endif %}
+        </div>
+        <p class="important-note">It is recommended to consult a veterinarian for proper diagnosis and treatment.</p>
+    </div>
+</body>
+</html>

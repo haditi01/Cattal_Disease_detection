@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cattle Disease Detection</title>
+    <style>
+        body {
+            
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333333; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #e7e3e3; /* Square container background color */
+            width: 500px; /* Square container width */
+            height: 500px; /* Square container height */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Add padding */
+        }
+        h1 {
+            font-size: 24px; /* Heading font size */
+        }
+        form {
+            margin-top: 20px; /* Adjust top margin */
+        }
+        input[type="file"] {
+            display: none; /* Hide the file input */
+        }
+        .choose-btn, .undo-btn, .submit-btn {
+            margin-top: 10px; /* Adjust top margin */
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Button background color */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .image-container {
+            margin-top: 20px; /* Adjust top margin */
+            width: 100%; /* Set width to 100% */
+        }
+        img {
+            max-width: 100%; /* Limit maximum width of the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cattle Disease Detection</h1>
+        <form action="{{ url_for('handle_prediction') }}" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="choose-btn">Choose Image</label>
+            <input type="file" id="file-upload" name="file" accept=".png, .jpg, .jpeg" onchange="previewImage(event)" required>
+            <div class="image-container" id="image-preview"></div>
+            <button type="submit" class="submit-btn">Upload</button>
+            <button type="button" class="undo-btn" onclick="undoUpload()">Undo</button>
+        </form>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var imageContainer = document.getElementById('image-preview');
+            imageContainer.innerHTML = ''; // Clear previous image
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function() {
+                var img = document.createElement('img');
+                img.src = reader.result;
+                imageContainer.appendChild(img);
+            }
+            reader.readAsDataURL(file);
+        }
+
+        function undoUpload() {
+            var imageContainer = document.getElementById('image-preview');
+            imageContainer.innerHTML = ''; // Clear the image container
+            document.getElementById('file-upload').value = ''; // Clear the file input
+        }
+    </script>
+</body>
+</html>

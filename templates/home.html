@@ -1,0 +1,324 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>CattleHealthAI</title>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link href="style.css" rel="stylesheet">
+        <script src="main.js"></script>
+        
+</head>
+
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: -150px;
+    width: 60%;
+    text-align: center;
+margin-left:300px;
+    
+}
+.details h2 {
+    
+    position: relative;
+    top: 100px;
+    margin: auto;
+    color: rgb(18, 231, 231);
+    font-size: 3rem;
+}
+
+label:hover {
+    transform: scale(1.03);
+}
+
+.details h2 {
+    /* margin-bottom: 300px; */
+    position: relative;
+    top: 100px;
+    margin: auto;
+    color: rgb(18, 231, 231);
+    font-size: 3rem;
+
+}
+
+
+
+
+.details h1 {
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(8, 8, 8);
+}
+
+
+.upload {
+
+    font-size: 20px;
+    background-color: rgb(255, 252, 252);
+    border-radius: 20px;
+    outline: none;
+    width: 500px;
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(45, 47, 49);
+
+
+
+}
+
+::-webkit-file-upload-button {
+    color: rgb(255, 252, 252);
+    padding: 20px;
+    border: 2px solid rgb(201, 6, 6);
+    background-color: rgb(201, 6, 6);
+    border-radius: 15px;
+
+}
+
+::-webkit-file-upload-button:hover {
+    border-radius: 20px;
+    border: 2px solid rgb(177, 174, 174);
+
+
+}
+
+input[type="submit"] {
+  position: absolute;
+  margin-top: 200px;
+  padding: 15px 35px;
+  background-color: rgb(31, 185, 190);
+  border-radius: 15px;
+  color: black;
+  font-size: 1.5rem;
+  border: 4px solid rgb(31, 185, 190);
+}
+
+</style>
+
+<body>
+    
+  <section id="home">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+</button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-header">
+              <i><i class="navbar-brand" href="#"><i class="fa fa-leaf" aria-hidden="true"><b></i>CattleHealthAI</i></b></a>
+</i></div>
+            <ul class="nav navbar-nav">
+        
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+    <li class="nav-item ">
+    <h4><a class="nav-link" href="#home"><b><i class="fa fa-home" aria-hidden="true"> </i> HOME </b> 
+   </a></h4>
+    </li>
+
+    <li class="nav-item ">
+    <h4><a class="nav-link" href="#about"><b><i class="fa fa-address-card" aria-hidden="true"></i>  ABOUT </b> 
+    </a></h4>
+    </li>
+
+    <li class="nav-item ">
+    <h4><a class="nav-link" href="#predict disease"><b><i class="fa fa-search" aria-hidden="true"></i> Predict Disease </b> 
+    </a></h4>
+    </li>
+
+    
+    
+    <!--li class="nav-item">
+    <h4><a class="nav-link" href="C:\Users\Sakshi\Downloads\Plant-Leaf-Disease-Prediction-main\templates\login.html"><b><i class="fa fa-sign-in" aria-hidden="true"></i>  REGISTER </b>
+    </a></h4>
+    </!--li-->    
+</ul>
+</div>
+</nav>
+
+<!--carousel-->
+
+        <div class="carousel slide" id="main-carousel" data-ride="carousel" >
+	    <ol class="carousel-indicators">
+		<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+		<li data-target="#main-carousel" data-slide-to="1"></li>
+        <li data-target="#main-carousel" data-slide-to="2"></li>
+</ol>
+<!-- /.carousel-indicators -->
+		<div class="carousel-inner carousel-fade">
+		<div class="carousel-item active">
+		<img class="w-100 h-5" src="img/img1.jpg" alt="ki1">
+</div>
+		<div class="carousel-item">
+		<img class="w-100 h-5" src="img/img2.jpg" alt="">
+</div>
+        <div class="carousel-item">
+		<img class="w-100 h-5" src="img/img3.jpg" alt="">
+</div>
+        
+</div>
+<!-- /.carousel-inner -->
+		<a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+		<span class="sr-only" aria-hidden="true">Prev</span>
+</a>
+		<a href="#main-carousel" class="carousel-control-next" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+		<span class="sr-only" aria-hidden="true">Next</span>
+</a>
+</div>
+</section>
+<!-- /.carousel -->
+
+
+<section class="about-us" id="about">
+  <div class="about">
+    <!--<img src="girl.png" class="pic">-->
+      <div class="text">
+      <h2>About Us</h2>
+        <p>"CattleHealth AI" is a conceptual system designed to assist in monitoring and managing the health of cattle. This system would leverage artificial intelligence (AI) technologies, such as machine learning and data analytics, to analyze various data sources related to cattle health. These could include data on individual animals, such as their age, breed, and health history, as well as environmental factors like temperature, humidity, and access to food and water.
+
+          By analyzing this data, CattleHealth AI could help identify patterns and early warning signs of potential health issues in cattle. For example, it could flag unusual behavior or symptoms that may indicate illness, allowing farmers or veterinarians to intervene early and provide appropriate care.
+      </p></div>
+    </div>
+  </section>
+  
+<br>
+<br>
+
+<section id="predict disease">
+  <h1 style="text-align:center;font-size:4rem">Disease Prediction</h1>
+
+  <center><a href="index.html" class="button">Click Here</a><center>
+      
+   <br><br><br>     
+    
+
+<center><div class="card">
+  <center><img src="img/pre.png" alt="Avatar" style="width:10%"></center>
+  <div class="container">
+    <center><h4><b>precautions </b></h4></center> 
+    <p><center>1.Vaccination: Ensure that your cattle are vaccinated against common diseases. 
+      <br>2.Hygiene: Maintain clean and dry living conditions for your cattle. 
+      <br>3.Nutrition: Provide a balanced diet that meets the nutritional needs of your cattle. 
+      <br>4.Quarantine: Quarantine new animals before introducing them to the rest of the herd. 
+      <br>5.Regular Monitoring: Monitor your cattle regularly for signs of illness or distress. 
+      <br>6.Parasite Control: Implement a parasite control program to manage internal and external parasites such as worms, ticks, and lice. 
+      <br>7.Biosecurity Measures: Implement biosecurity measures to minimize the risk of introducing diseases onto your farm. 
+      <br>8.Environmental Management: Manage your farm environment to reduce stress on cattle, as stress can weaken the immune system. Provide adequate shade, ventilation, and shelter from extreme weather conditions.
+      <br>9.Regular Veterinary Care: Schedule regular check-ups and consultations with a veterinarian. </center></p> 
+  </div>
+</div></center>
+
+</section>
+  
+
+<br><br><br><br>
+
+
+
+
+<p><a href="#" class="simple-back-to-top"></a></p>
+<script type="text/javascript">
+// create the back to top button
+	$('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
+	var amountScrolled = 300;
+	$(window).scroll(function() {
+		if ( $(window).scrollTop() > amountScrolled ) {
+			$('a.back-to-top').fadeIn('slow');
+		} else {
+			$('a.back-to-top').fadeOut('slow');
+		}
+	});
+	
+	$('a.back-to-top, a.simple-back-to-top').click(function() {
+		$('html, body').animate({
+			scrollTop: 0
+		}, 700);
+		return false;
+	});
+	</script>
+
+
+  
+
+<hr>
+                    <section class="footers bg-light">
+                    <div class="container-fluid">
+                    <div class="row">&nbsp &nbsp &nbsp  &nbsp &nbsp 
+                    <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+                    <h3 class="underline-small">Quick Links</h3>
+                    <div class="footers-info mt-3" >
+                    <p>
+                    <ul>
+                     
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#analytics">Data Analytics</a></li>
+                <li><a href="#help">Help & Documentation</a></li>
+            </ul>
+                    </ul>
+                    </p>
+</div>
+                    <div class="social-icons"> 
+                    <a href=""><i id="social-fb" class="fa fa-facebook fa-2x social"></i></a>
+                    <a href=""><i id="social-tw" class="fa fa-twitter fa-2x social"></i></a>
+                    <a href=""><i id="social-gp" class="fa fa-instagram fa-2x social"></i></a>
+                    <a href=""><i id="social-em" class="fa fa-envelope fa-2x social"></i></a>
+</div>
+</div>
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+                    
+  
+                    <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
+                    <h3 class="underline-small">Our Vision </h3>
+                    <div class="footers-info mt-3">
+                    <p>
+                    <b></b> The vision for Cattle Health AI is real-time monitoring and early disease detection, personalized treatments, seamless integration with veterinary services, continuous learning, and ethical considerations, aiming to enhance animal welfare and agricultural sustainability.<br><br>
+                    </p>
+</div>
+</div>
+
+&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+
+                    <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
+                      <h3>Contact Us</h3>
+                      <p>Email: info@cattlehealthai.com</p>
+                      <p>Phone: +1-123-456-7890</p>
+                      <p>Address: 123 AI Street, Farmville</p>
+</div>
+</div>
+</div>
+                    <hr>
+                    
+                   <center><p class="copyright"> 2024 Cattle Health AI. All rights reserved.</p></center>
+
+</section>
+
+
+                    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
